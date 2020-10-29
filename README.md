@@ -1,5 +1,5 @@
 # Sample-identity-CHECK
-## based on https://www.nature.com/articles/s41467-020-17453-5
+### --> based on https://www.nature.com/articles/s41467-020-17453-5
 
 ## pre-compiled haplotype maps for hg19 and hg38. see details in https://github.com/naumanjaved/fingerprint_maps
 
