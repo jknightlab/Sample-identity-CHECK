@@ -12,7 +12,7 @@ row.names(data) <- data$READGROUP
 data <- data[,-1]
 
 # str(data) to check the if the valules are numerics 
-# if yes, replace the characters/factors as numerics NOTE: replace the "," to "" to avoid generated incorrected NA values
+# if yes, replace the characters/factors as numerics NOTE: replace the "," to "" to avoid generating incorrected NA values
 data[] <- lapply(data, function(x) as.numeric(as.character(gsub(",","",x))))
 
 # order the columns/rows by names
