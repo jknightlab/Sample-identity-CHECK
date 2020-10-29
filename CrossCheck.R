@@ -1,5 +1,6 @@
-library(pheatmap)
 library(data.table)
+library(RColorBrewer)
+library(pheatmap)
 
 data <- as.data.frame(fread("~/sample.140.crosscheck_LOD_Matrix_MAPQ255.txt", stringsAsFactors = F))
 
