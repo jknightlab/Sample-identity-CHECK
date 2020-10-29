@@ -1,4 +1,5 @@
 # Sample-identity-CHECK
+## Crosscheck sample swaps
 ### --> based on https://www.nature.com/articles/s41467-020-17453-5
 
 #### An example shows the relative likelihood of shared (in green) or distinct (in purple) genetic fingerprints across time-course RNA-seq samples from each individul. Eight individuals (yellow squares) contain unmatched samples. [A positive LOD score suggests the two compared samples are more likely from the same individuls, e.g., LOD score = 10 means it's 10^10 more likely the two are matched.]
