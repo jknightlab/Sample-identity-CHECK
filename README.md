@@ -33,3 +33,4 @@ NUM_THREADS=4 \
 OUTPUT=sample.140.crosscheck_metrics.txt \
 MATRIX_OUTPUT=sample.140.crosscheck_LOD_Matrix.txt
 ```
+### see example runs using rescomp ""
