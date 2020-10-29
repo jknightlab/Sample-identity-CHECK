@@ -1,15 +1,15 @@
 # Sample-identity-CHECK
-#### --> based on https://www.nature.com/articles/s41467-020-17453-5
+### --> based on https://www.nature.com/articles/s41467-020-17453-5
 
-#### An example shows the relative likelihood of shared (in blue) or distinct (in purple) genetic fingerprints across samples from each individul. 8 individuals (yellow squares) contain unmatched samples. [A positive LOD score suggests the two compared samples are more likely from the same individuls, e.g., LOD score = 10 means it's 10^10 more likely the two are matched.]
+#### An example shows the relative likelihood of shared (in blue) or distinct (in purple) genetic fingerprints across time-course RNA-seq samples from each individul. Eight individuals (yellow squares) contain unmatched samples. [A positive LOD score suggests the two compared samples are more likely from the same individuls, e.g., LOD score = 10 means it's 10^10 more likely the two are matched.]
 ![Screenshot](LOD_matrxi.png)
 
-### 1. Download pre-compiled haplotype maps for hg19 or hg38. see details in https://github.com/naumanjaved/fingerprint_maps
+#### 1. Download pre-compiled haplotype maps for hg19 or hg38. see details in https://github.com/naumanjaved/fingerprint_maps
 
-### 2. Add Readgroups for each sample for pairwise comparisons
+#### 2. Add Readgroups (RGs) for each RNA-seq sample (aligned * deduplicated bam file) for pairwise comparisons
 ```
-/apps/well/java/jdk1.8.0_latest/bin/java -Xmx8g -jar \
-/apps/well/picard-tools/2.21.1/picard.jar AddOrReplaceReadGroups \
+java -Xmx8g -jar \
+picard.jar AddOrReplaceReadGroups \
 INPUT=Deduplicated.bam/${SAMPLE_NAME}.dedup.bam \
 OUTPUT=Deduplicated.bam/${SAMPLE_NAME}.dedup_RG.bam \
 RGID=$SAMPLE_NAME \
@@ -18,13 +18,14 @@ RGPL=illumina \
 RGPU=$SAMPLE_NAME \
 RGSM=$SAMPLE_NAME
 ```
-### 3. Collects fingerprints (genotype information from the RNA reads) and run CrosscheckFingerprints.sh
+#### 3. Collects fingerprints (genotype information from the RNA reads) and run CrosscheckFingerprints.sh
 #### the "MATRIX_OUTPUT" file could be used for results visualization refer to 
 ```
+# merge the bam files
 samtools merge -@ 12 BIONIC_merged_RG.bam \
 Deduplicated.bam/*.dedup_RG.bam 
-
-/apps/well/java/jdk1.8.0_latest/bin/java -Xmx8g -jar /apps/well/picard-tools/2.21.1/picard.jar CrosscheckFingerprints \
+# run CrosscheckFingerprints. change the maximum Java heap size if needed.
+java -Xmx8g -jar /apps/well/picard-tools/2.21.1/picard.jar CrosscheckFingerprints \
 INPUT=BIONIC_148_RG.bam \
 HAPLOTYPE_MAP=hg38_chr.map \
 NUM_THREADS=4 \
