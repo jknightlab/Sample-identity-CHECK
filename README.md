@@ -2,7 +2,7 @@
 #### --> based on https://www.nature.com/articles/s41467-020-17453-5
 
 ## An example 
-![](LOD matrxi.png)
+![Screenshot](LOD_matrxi.png)
 
 ### 1. Download pre-compiled haplotype maps for hg19 or hg38. see details in https://github.com/naumanjaved/fingerprint_maps
 
