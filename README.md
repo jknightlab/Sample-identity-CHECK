@@ -1,18 +1,19 @@
 # Sample-identity-CHECK
 ### --> based on https://www.nature.com/articles/s41467-020-17453-5
 
-## pre-compiled haplotype maps for hg19 and hg38. see details in https://github.com/naumanjaved/fingerprint_maps
+## 1. download pre-compiled haplotype maps for hg19 and hg38. see details in https://github.com/naumanjaved/fingerprint_maps
 
+### 2. collects fingerprints (essentially, genotype information from the RNA reads)
 ```
-python python_scripts/dexseq_prepare_annotation2.py -r no -f Homo_sapiens.GRCh37.87_DEXSeq.gtf  Homo_sapiens.GRCh37.87.gtf.gz Homo_sapiens.GRCh37.87_DEXSeq.gff.
-```
+samtools merge -@ 12 BIONIC_merged_RG.bam \
+Deduplicated.bam/*.dedup_RG.bam 
 
-### 2. Generate exonic_part count file
-```
-GTF=/well/jknight/ping/gtfs/Homo_sapiens.GRCh38.84_DEXSeq.counts.gtf.
-/apps/htseq/subread/bin/featureCounts -p -f -O -s 2 -F GTF -a $GTF \
--t exonic_part -o fcount.DEXSeq.no.r.txt \
-*.bam.
+/apps/well/java/jdk1.8.0_latest/bin/java -Xmx8g -jar /apps/well/picard-tools/2.21.1/picard.jar CrosscheckFingerprints \
+INPUT=BIONIC_148_RG.bam \
+HAPLOTYPE_MAP=hg38_chr.map \
+NUM_THREADS=4 \
+OUTPUT=sample.140.crosscheck_metrics.txt \
+MATRIX_OUTPUT=sample.140.crosscheck_LOD_Matrix.txt
 ```
 
 ### 3. Differential exon usage analysis via DEXseq
