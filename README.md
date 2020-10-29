@@ -18,8 +18,9 @@ RGPL=illumina \
 RGPU=$SAMPLE_NAME \
 RGSM=$SAMPLE_NAME
 ```
-#### 3. Collects fingerprints (genotype information from the RNA reads) and run CrosscheckFingerprints.sh
-#### the "MATRIX_OUTPUT" file could be used for results visualization refer to 
+#### 3. Collects fingerprints (LD blocks information derived from the RNA-seq reads) and run CrosscheckFingerprints.sh
+#### see details in https://gatk.broadinstitute.org/hc/en-us/articles/360037057832-CrosscheckFingerprints-Picard-
+#### the "MATRIX_OUTPUT" file could then be used for results visualization re 
 ```
 # merge the bam files
 samtools merge -@ 12 BIONIC_merged_RG.bam \
@@ -32,4 +33,3 @@ NUM_THREADS=4 \
 OUTPUT=sample.140.crosscheck_metrics.txt \
 MATRIX_OUTPUT=sample.140.crosscheck_LOD_Matrix.txt
 ```
-x
