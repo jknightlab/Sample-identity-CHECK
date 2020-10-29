@@ -33,4 +33,5 @@ NUM_THREADS=4 \
 OUTPUT=sample.140.crosscheck_metrics.txt \
 MATRIX_OUTPUT=sample.140.crosscheck_LOD_Matrix.txt
 ```
-### see example runs using rescomp ""
+#### see example runs in rescomp "2.add.ReadGroups.sh" and "3.CrosscheckFingerprints.sh"
+#### see example output "sample.140.crosscheck_LOD_Matrix_MAPQ255.txt" and "CrossCheck.R" for plotting
