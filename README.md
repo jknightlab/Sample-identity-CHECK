@@ -1,7 +1,7 @@
 # Sample-identity-CHECK
-### --> based on https://www.nature.com/articles/s41467-020-17453-5
+#### --> based on https://www.nature.com/articles/s41467-020-17453-5
 
-## 1. download pre-compiled haplotype maps for hg19 and hg38. see details in https://github.com/naumanjaved/fingerprint_maps
+### 1. download pre-compiled haplotype maps for hg19 and hg38. see details in https://github.com/naumanjaved/fingerprint_maps
 
 ### 2. collects fingerprints (essentially, genotype information from the RNA reads)
 ```
