@@ -1,7 +1,7 @@
 # Sample-identity-CHECK
 #### --> based on https://www.nature.com/articles/s41467-020-17453-5
 
-## An example 
+#### An example shows the relative likelihood of shared (in blue) or distinct (in purple) genetic fingerprints across samples from each individul. 8 individuals (yellow squares) contain unmatched samples. [A positive LOD score suggests the two compared samples are more likely from the same individuls, e.g., LOD score = 10 means it's 10^10 more likely the two are matched.]
 ![Screenshot](LOD_matrxi.png)
 
 ### 1. Download pre-compiled haplotype maps for hg19 or hg38. see details in https://github.com/naumanjaved/fingerprint_maps
