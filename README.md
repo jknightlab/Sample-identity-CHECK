@@ -28,11 +28,11 @@ samtools merge -@ 12 BIONIC_merged_RG.bam \
 Deduplicated.bam/*.dedup_RG.bam 
 # run CrosscheckFingerprints. change the maximum Java heap size if needed.
 java -Xmx8g -jar /apps/well/picard-tools/2.21.1/picard.jar CrosscheckFingerprints \
-INPUT=BIONIC_148_RG.bam \
+INPUT=BIONIC_merged_RG.bam \
 HAPLOTYPE_MAP=hg38_chr.map \
 NUM_THREADS=4 \
 OUTPUT=sample.140.crosscheck_metrics.txt \
 MATRIX_OUTPUT=sample.140.crosscheck_LOD_Matrix.txt
 ```
-#### see example runs in rescomp "2.add.ReadGroups.sh" and "3.CrosscheckFingerprints.sh"
+#### see example runs in Rescomp "2.add.ReadGroups.sh" and "3.CrosscheckFingerprints.sh"
 #### see example output "sample.140.crosscheck_LOD_Matrix_MAPQ255.txt" and "CrossCheck.R" for plotting
