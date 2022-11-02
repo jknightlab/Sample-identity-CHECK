@@ -1,7 +1,7 @@
 # Sample-identity-CHECK
 ## Crosscheck sample swaps
 #### An example shows the relative likelihood of shared (in green) or distinct (in purple) genetic fingerprints across the time-course RNA-seq samples from different individuls. Eight individuals as defined (yellow squares) contain unmatched samples. [LOD: log-odds ratio as described by Javed N. *et al*. [here](https://www.nature.com/articles/s41467-020-17453-5).; A positive LOD score suggests the two compared samples are more likely from the same individul.]
-![Screenshot](LOD_matrxi.png)
+![Screenshot](crosscheck.png)
 
 #### 1. Download pre-compiled haplotype maps for hg19 or hg38. see details [here](https://github.com/naumanjaved/fingerprint_maps) 
 
